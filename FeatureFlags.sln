@@ -6,9 +6,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2073B907-B027-45B2-A8B4-CA80E6337471}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unleash.Api", "src\Unleash.Api\Unleash.Api.csproj", "{EBBA7CE0-48EB-4548-B944-6AF44347C0CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EBBA7CE0-48EB-4548-B944-6AF44347C0CE} = {2073B907-B027-45B2-A8B4-CA80E6337471}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBBA7CE0-48EB-4548-B944-6AF44347C0CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBBA7CE0-48EB-4548-B944-6AF44347C0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBBA7CE0-48EB-4548-B944-6AF44347C0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBBA7CE0-48EB-4548-B944-6AF44347C0CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
