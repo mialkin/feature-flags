@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
+using Unleash.Api.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ services.AddControllers();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen(options => { options.DescribeAllParametersInCamelCase(); });
 services.AddRouting(options => options.LowercaseUrls = true);
+services.ConfigureUnleash();
 
 var app = builder.Build();
 

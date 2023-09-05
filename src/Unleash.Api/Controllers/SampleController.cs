@@ -1,4 +1,3 @@
-using System;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Unleash.Api.Controllers;
@@ -7,11 +6,13 @@ namespace Unleash.Api.Controllers;
 [Route("[controller]")]
 public class SampleController : ControllerBase
 {
-    [HttpGet("get-current-utc-date")]
+    private readonly IUnleash _unleash;
+
+    public SampleController(IUnleash unleash) => _unleash = unleash;
+
+    [HttpGet("check-super-awesome-feature")]
     public IActionResult GetCurrentUtcDate()
     {
-        var utc = DateTime.UtcNow;
-
-        return Ok(utc);
+        return Ok(_unleash.IsEnabled(FeatureToggleNames.SuperAwesomeFeature) ? "enabled" : "disabled");
     }
 }
