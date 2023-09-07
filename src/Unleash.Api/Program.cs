@@ -11,13 +11,14 @@ builder.Host.UseSerilog((context, configuration) =>
     configuration.WriteTo.Console();
 });
 
+var configuration = builder.Configuration;
 var services = builder.Services;
 
 services.AddControllers();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen(options => { options.DescribeAllParametersInCamelCase(); });
 services.AddRouting(options => options.LowercaseUrls = true);
-services.ConfigureUnleash();
+services.ConfigureUnleash(configuration);
 
 var app = builder.Build();
 
